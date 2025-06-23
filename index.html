@@ -1,0 +1,54 @@
+# Criação do arquivo index.html com botões para cada página
+index_html_path = output_dir / "index.html"
+
+index_html_content = """<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Página Inicial - Testes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    a.button {
+      display: block;
+      margin: 10px auto;
+      padding: 12px 24px;
+      background-color: #2563eb;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      width: 80%;
+      max-width: 300px;
+      transition: background-color 0.3s;
+    }
+    a.button:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <h1>Selecione um Teste</h1>
+  <a class="button" href="curriculo.html">Currículo</a>
+  <a class="button" href="disc.html">DISC</a>
+  <a class="button" href="linguagens.html">Linguagens de Reconhecimento Profissional</a>
+  <a class="button" href="preferencia-cerebral.html">Laudo de Preferência Cerebral</a>
+</body>
+</html>
+"""
+
+index_html_path.write_text(index_html_content, encoding="utf-8")
+
+# Atualizar o zip com index.html
+with ZipFile(zip_path, 'a') as zipf:
+    zipf.write(index_html_path, arcname=index_html_path.name)
+
+zip_path.name
