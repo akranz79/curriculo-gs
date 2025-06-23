@@ -1,11 +1,12 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Página Inicial - Testes GS Gestão de Talentos</title>
+  <title>GS Gestão de Talentos - Testes</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 600px;
+      max-width: 800px;
       margin: 40px auto;
       padding: 20px;
       text-align: center;
@@ -17,30 +18,56 @@
       max-width: 150px;
       margin-bottom: 20px;
     }
-    a.button {
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      justify-content: center;
+    }
+    a.button, button.disabled-button {
       display: block;
-      margin: 10px auto;
-      padding: 12px 24px;
-      background-color: #2563eb;
-      color: white;
+      padding: 12px 16px;
       font-weight: bold;
       border-radius: 8px;
       text-decoration: none;
-      width: 80%;
-      max-width: 300px;
+      text-align: center;
+    }
+    a.button {
+      background-color: #2563eb;
+      color: white;
       transition: background-color 0.3s;
     }
     a.button:hover {
       background-color: #1d4ed8;
+    }
+    button.disabled-button {
+      background-color: #9ca3af;
+      color: #f3f4f6;
+      border: none;
+      cursor: not-allowed;
     }
   </style>
 </head>
 <body>
   <img src="logo.png" alt="Logo Principal">
   <h1>Selecione um Teste</h1>
-  <a class="button" href="curriculo.html">Currículo</a>
-  <a class="button" href="disc.html">DISC</a>
-  <a class="button" href="linguagens.html">Linguagens de Reconhecimento Profissional</a>
-  <a class="button" href="preferencia-cerebral.html">Laudo de Preferência Cerebral</a>
+
+  <div class="grid">
+    <!-- Botões ativos -->
+    <a class="button" href="curriculo.html">Currículo</a>
+    <a class="button" href="disc.html">DISC</a>
+    <a class="button" href="linguagens.html">Linguagens de Reconhecimento Profissional</a>
+    <a class="button" href="preferencia-cerebral.html">Laudo de Preferência Cerebral</a>
+
+    <!-- Botões desabilitados -->
+    <button class="disabled-button" disabled>MBTI (Myers-Briggs Type Indicator)</button>
+    <button class="disabled-button" disabled>G36 da Pearson</button>
+    <button class="disabled-button" disabled>RAC Logical / Matriz Progressiva (estilo Raven)l</button>
+    <button class="disabled-button" disabled>Big Five (OCEAN)</button>
+    <button class="disabled-button" disabled>MSCEIT – Mayer-Salovey-Caruso Emotional Intelligence Test</button>
+    <button class="disabled-button" disabled>EQ-i 2.0 (Bar-On Emotional Quotient Inventory)</button>
+    <button class="disabled-button" disabled>Testes de Fit Cultural</button>
+    <button class="disabled-button" disabled>Testes de lógica de programação</button>
+  </div>
 </body>
 </html>
